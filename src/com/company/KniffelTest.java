@@ -8,13 +8,14 @@ public class KniffelTest {
 
     @org.junit.Test
     public void wuerfelZahlen() {
-        Kniffel game= new Kniffel();
-        int laenge =6;
-        int[] res= game.wuerfelZahlen(laenge);
+        Kniffel game = new Kniffel();
+        int length = 6;
+        int[] res = game.rollDice(length);
         System.out.println(Arrays.toString(res));
-        assertTrue(res.length== laenge);
-        for(int i =0; i < res.length; i++) {
-            assertTrue(res[i] > 0 && res[i] < 7);
+        assertEquals(res.length, length);
+        for (int rolledNumber :
+                res) {
+            assertTrue(rolledNumber > 0 && rolledNumber < 7);
         }
     }
 }
