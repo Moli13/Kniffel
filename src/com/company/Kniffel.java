@@ -5,7 +5,7 @@ import java.util.List;
 import java.util.Random;
 
 public class Kniffel {
-    java.util.Random wuerfelWurf;
+    java.util.Random randomNumberGenerator;
     List<IRollOption> options;
     final int numberOfDice;
     int playerPoints;
@@ -20,7 +20,7 @@ public class Kniffel {
     }
 
     public Kniffel(IRollOption... paramOptions){
-        wuerfelWurf = new Random();
+        randomNumberGenerator = new Random();
         this.options = Arrays.asList(paramOptions);
         numberOfDice = 5;
         playerPoints = 0;
@@ -41,10 +41,9 @@ public class Kniffel {
     }
 
     public int[] rollDice(int length) {
-        int[] zahlen = new int[length];
+        int[] countNumber = new int[6];
         for (int i = 0; i < length; i++) {
-            zahlen[i] = wuerfelWurf.nextInt(6) + 1;
-        }
-        return zahlen;
+            countNumber[randomNumberGenerator.nextInt(6)] += 1;
+        }return countNumber;
     }
 }

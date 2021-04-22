@@ -9,13 +9,17 @@ public class KniffelTest {
     @org.junit.Test
     public void wuerfelZahlen() {
         Kniffel game = new Kniffel();
-        int length = 6;
-        int[] res = game.rollDice(length);
+        int numberDiceRolled = 6;
+        int sum = 0;
+        int[] res = game.rollDice(numberDiceRolled);
         System.out.println(Arrays.toString(res));
-        assertEquals(res.length, length);
+        assertEquals(res.length, 6);
         for (int rolledNumber :
                 res) {
-            assertTrue(rolledNumber > 0 && rolledNumber < 7);
+            sum += rolledNumber;
+            assertTrue(rolledNumber >= 0);
         }
+        assertEquals(numberDiceRolled, sum);
+
     }
 }
