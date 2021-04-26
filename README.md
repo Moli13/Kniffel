@@ -1,7 +1,12 @@
 # Kniffel
-Kniffel the game
+Kniffel the game:
 
-Die beginne des Spiels Kniffel durch das werfen einer Random Zahl
+# Game Rules
+- Roll random number
+- ...
 
 # Spielregeln:
 [Spielalgo](https://www.programmieraufgaben.ch/aufgabe/kniffel-yahtzee/c322kxmh)
+
+# Sample Input
+[Kniffelblock](https://gws2.de/px/model_kniffel.pdf)

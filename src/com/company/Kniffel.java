@@ -6,35 +6,42 @@ import java.util.Random;
 
 public class Kniffel {
     java.util.Random randomNumberGenerator;
-    List<IRollOption> options;
+    List<AbstractRollOption> options;
     final int numberOfDice;
     int playerPoints;
 
     public Kniffel() {
         this(new FullHouseOption(),
                 new FullHouseOption(),
-                new FullHouseOption(),
-                new PaschOption(),
+                new ThreePaschOption(),
+                new FourPaschOption(),
                 new SmallStreet(),
-                new BigStreet());
+                new BigStreet(),
+                new KniffelOption(),
+                new ChanceOption(),
+                new OneOption(),
+                new TwoOption(),
+                new ThreeOption(),
+                new FourOption(),
+                new FiveOption(),
+                new SixOption());
     }
 
-    public Kniffel(IRollOption... paramOptions){
+    public Kniffel(AbstractRollOption... paramOptions){
         randomNumberGenerator = new Random();
         this.options = Arrays.asList(paramOptions);
         numberOfDice = 5;
         playerPoints = 0;
     }
 
-    public int chooceOption(int[] rolledDice) {
-        // TODO
+    public int chooseOption(int[] rolledDice) {
         return 0;
     }
 
     public int play() {
         for (int currentRound = 0; currentRound < options.size(); currentRound++){
             int[] rolledDice = rollDice(numberOfDice);
-            int chosen = chooceOption(rolledDice);
+            int chosen = chooseOption(rolledDice);
             playerPoints += options.get(chosen).getPoints(rolledDice);
         }
         return playerPoints;

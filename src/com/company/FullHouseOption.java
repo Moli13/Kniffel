@@ -1,6 +1,6 @@
 package com.company;
 
-public class FullHouseOption implements IRollOption {
+public class FullHouseOption extends AbstractRollOption {
     @Override
     public int getPoints(int[] rolledDice) {
 

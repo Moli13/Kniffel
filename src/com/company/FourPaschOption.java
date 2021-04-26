@@ -1,8 +1,10 @@
 package com.company;
 
-public class SmallStreet extends AbstractRollOption {
+public class FourPaschOption extends AbstractRollOption {
     @Override
     public int getPoints(int[] rolledDice) {
         return 0;
     }
+
+    public boolean bla() { return false; }
 }
